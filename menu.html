@@ -9,38 +9,42 @@
     <script src="https://kit.fontawesome.com/bfda034327.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
     <div id = "product">
-        <span>상품주문</span>
-        <i class="fa fa-times-circle fa-2x delete"></i>
+        <h1>상품주문</h1>
     </div>
     <div id = "food">
-        <span class = "yellow">menu<span>
+        <h2 class = "yellow">menu</h2>
         <div>
             <input type = "text" placeholder = "메뉴를 입력하세요">
             <i class="fas fa-search"></i>
         </div>
     </div>
+    </header>
+    <main>
     <!-- 배경 -->
-    <div id = "background">
-        <input type = "button" class = "allbutton" value = "추천메뉴">
-        <input type = "button" class = "allbutton" value = "메인음식">
-        <input type = "button" class = "allbutton" value = "면류">
-        <input type = "button" class = "allbutton" value = "버거류">
-        <input type = "button" class = "allbutton" value = "음료">
-    </div>
+    <ul id = "background">
+        <li class = "allbutton">추천메뉴</li>
+        <li class = "allbutton">메인음식</li>
+        <li class = "allbutton">면류</li>
+        <li class = "allbutton">버거류</li>
+        <li class = "allbutton">음료</li>
+    </ul>
+    </main>
+    <footer>
     <div id = "list"> <!-- 상품리스트 -->
-        <span>상품주문목록</span>
+        <h3>상품주문목록</h3>
             <input type ="button" id = "recentbutton" value = "최근주문내역">
             <i class="fas fa-plus-square white"></i>
             <i class="fas fa-minus-square white"></i>
-        <span>상품판매 결제선택하기</span>
+        <h4>상품판매 결제선택하기</h4>
     <div>
             <input type = "button" class = "productmenu" value = "상품명">
             <input type = "button" class = "productmenu" value = "판매금액">
             <input type = "button" class = "productmenu" value = "수량">
             <form id = "addmenu"></form>
     </div>
-        <form id = "card">
+        <div id = "card">
             <input type= "checkbox" class = "white" value = "카드">카드
             <input type= "checkbox" class = "white" value = "현금">현금
             <select id = "money">
@@ -48,11 +52,14 @@
                 <option value = "">1000원</option>
                 <option value = "">2000원</option>
                 <option value = "">10000원</option>
+                <option value = "">기타</option>
                 <option value = "">가격에맞게</option>
             </select>
-        </form>
+        </div>
         <input type = "text" id = "price" placeholder="0원">
         <input type = "button" id = "order" value = "상품 주문하기">
         </div>
+        <!-- 시멘틱태그 -->
+    </footer>
 </body>
 </html>
