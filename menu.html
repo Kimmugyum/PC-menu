@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://kit.fontawesome.com/bfda034327.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id = "product">
+        <span>상품주문</span>
+        <i class="fa fa-times-circle fa-2x delete"></i>
+    </div>
+    <div id = "food">
+        <span class = "yellow">menu<span>
+        <div>
+            <input type = "text" placeholder = "메뉴를 입력하세요">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <!-- 배경 -->
+    <div id = "background">
+        <input type = "button" class = "allbutton" value = "추천메뉴">
+        <input type = "button" class = "allbutton" value = "메인음식">
+        <input type = "button" class = "allbutton" value = "면류">
+        <input type = "button" class = "allbutton" value = "버거류">
+        <input type = "button" class = "allbutton" value = "음료">
+    </div>
+    <div id = "list"> <!-- 상품리스트 -->
+        <span>상품주문목록</span>
+            <input type ="button" id = "recentbutton" value = "최근주문내역">
+            <i class="fas fa-plus-square white"></i>
+            <i class="fas fa-minus-square white"></i>
+        <span>상품판매 결제선택하기</span>
+    <div>
+            <input type = "button" class = "productmenu" value = "상품명">
+            <input type = "button" class = "productmenu" value = "판매금액">
+            <input type = "button" class = "productmenu" value = "수량">
+            <form id = "addmenu"></form>
+    </div>
+        <form id = "card">
+            <input type= "checkbox" class = "white" value = "카드">카드
+            <input type= "checkbox" class = "white" value = "현금">현금
+            <select id = "money">
+                <option value = "">금액을선택하세요</option>
+                <option value = "">1000원</option>
+                <option value = "">2000원</option>
+                <option value = "">10000원</option>
+                <option value = "">가격에맞게</option>
+            </select>
+        </form>
+        <input type = "text" id = "price" placeholder="0원">
+        <input type = "button" id = "order" value = "상품 주문하기">
+        </div>
+</body>
+</html>

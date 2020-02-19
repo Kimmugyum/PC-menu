@@ -1,0 +1,128 @@
+html {
+    width : 800px;
+}
+
+#product { /*상품*/
+    display : inline-block;
+    background-color: #292f2d;
+    width : 800px;
+    margin : auto;
+}
+
+#product > span {
+    font-size : 15px;
+    padding : 15px;
+    color : white;
+    vertical-align:middle;
+}
+
+#product > .delete {  /* 취소 CSS */
+    float : right;
+    color : white;
+}
+
+#food {
+    background-color: #3e4648;
+    width : 800px;
+    height : 50px;
+}
+
+#food > .yellow {
+    color : yellow;
+    vertical-align:middle;
+    padding : 10px;
+    font-size : 30px;
+}
+
+span > div {
+    float : right;
+    color : white
+}
+
+.allbutton {/*버튼 CSS*/
+    background-color: #3e4648;
+    color : yellow;
+    font-size: 19px;
+    display : block;
+    width : 100px;
+    height : 80px;
+}
+#background /* 중앙 메뉴사진배경CSS */
+{
+    background: #dbedff;
+    width : 800px;
+    margin : -2px;
+    overflow: scroll;
+}
+
+#recentbutton {
+    background-color : gray;
+    border-radius:10px;
+}
+
+#list {
+    background-color: #3e4648;
+    width : 800px;
+    height : 250px;
+}
+#list > span {
+    font-size : 15px;
+    padding : 40px;
+    color : white;
+}
+
+.productmenu{
+    background-color : #5a5d6c;
+    color : white;
+    width : 100px;
+    padding : 5px;
+}
+.white {
+    background-color : white;
+}
+
+#addmenu {
+    width : 305px;
+    height : 150px;
+    margin : 5px;
+    background-color : white;
+}
+
+div > #card {
+    width : 200px;
+    position: relative;
+    height : 100px;
+    margin : 5px;
+    background-color : gray;
+    bottom : 190px;
+    left : 350px;
+}
+
+#money {
+    width : 200px;
+    position: relative;
+    top : 85px;
+}
+
+#price {
+    background-color: floralwhite;
+    color : white;
+    height : 100px;
+    font-size: 50px;
+    width : 200px;
+    position : relative;
+    float : right;
+    bottom : 310px;
+    border-radius: 5px;
+
+}
+#order {
+    background-color: #ed4a5d;
+    color : white;
+    font-size : 30px;
+    border-radius: 5px;
+    position : relative;
+    float : right;
+    bottom : 200px;
+    left : 200px;
+}
