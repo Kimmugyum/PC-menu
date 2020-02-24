@@ -7,6 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bfda034327.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <!-- <script src="jquery.js"></script> -->
 </head>
 <body>
     <header>
@@ -15,38 +19,42 @@
     </div>
     <div id = "food">
         <h2 class = "yellow">menu</h2>
-        <div>
-            <input type = "text" placeholder = "메뉴를 입력하세요">
-            <i class="fas fa-search"></i>
-        </div>
+        <input type = "text" placeholder = "메뉴를 입력하세요">
+        <input type = "button" value ="검색">
     </div>
     </header>
     <main>
     <!-- 배경 -->
-    <ul id = "background">
-        <li class = "allbutton">추천메뉴</li>
-        <li class = "allbutton">메인음식</li>
-        <li class = "allbutton">면류</li>
-        <li class = "allbutton">버거류</li>
-        <li class = "allbutton">음료</li>
+    <ul id = "allbutton">
+        <li class = "button">추천메뉴</li>
+        <li class = "button">메인음식</li>
+        <li class = "button">면류</li>
+        <li class = "button">버거류</li>
+        <li class = "button">음료</li>
     </ul>
     </main>
     <footer>
-    <div id = "list"> <!-- 상품리스트 -->
+    <div id = "a">
+        <div id = "list"> <!-- 상품리스트 -->
         <h3>상품주문목록</h3>
             <input type ="button" id = "recentbutton" value = "최근주문내역">
-            <i class="fas fa-plus-square white"></i>
-            <i class="fas fa-minus-square white"></i>
+            <i class="fas fa-plus-square"></i>
+            <i class="fas fa-minus-square"></i>
+        </div>
         <h4>상품판매 결제선택하기</h4>
-    <div>
+        <div id = "choice">
             <input type = "button" class = "productmenu" value = "상품명">
             <input type = "button" class = "productmenu" value = "판매금액">
             <input type = "button" class = "productmenu" value = "수량">
-            <form id = "addmenu"></form>
     </div>
+    <div id = "moniter">
+    </div>
+</div>
         <div id = "card">
+            <div>
             <input type= "checkbox" class = "white" value = "카드">카드
             <input type= "checkbox" class = "white" value = "현금">현금
+        </div>
             <select id = "money">
                 <option value = "">금액을선택하세요</option>
                 <option value = "">1000원</option>
@@ -55,7 +63,9 @@
                 <option value = "">기타</option>
                 <option value = "">가격에맞게</option>
             </select>
+            <input type = "text" id = "help" placeholder ="직원에게 부탁할것">
         </div>
+        <div id = "bottom">
         <input type = "text" id = "price" placeholder="0원">
         <input type = "button" id = "order" value = "상품 주문하기">
         </div>
