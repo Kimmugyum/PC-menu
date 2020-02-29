@@ -25,23 +25,24 @@
     </header>
     <main>
     <!-- 배경 -->
-    <ul id = "allbutton">
+    <ul>
         <li class = "button">추천메뉴</li>
         <li class = "button">덮밥류</li>
         <li class = "button">면류</li>
         <li class = "button">버거류</li>
         <li class = "button">음료</li>
     </ul>
+    <div id = "picture">
+    </div>
     </main>
     <footer>
-    <div id = "a">
+    <div id = "orderlist">
         <div id = "list"> <!-- 상품리스트 -->
-        <h3>상품주문목록</h3>
-            <input type ="button" id = "recentbutton" value = "최근주문내역">
-            <i class="fas fa-plus-square"></i>
-            <i class="fas fa-minus-square"></i>
+        <h3>상품구매목록</h3>
+            <input type ="button" id = "recentbutton" value = "주문내역">
+            <i class="far fa-plus-square fa-3x"></i>
+            <i class="far fa-minus-square fa-3x"></i>
         </div>
-        <h4>상품판매 결제선택하기</h4>
         <div id = "choice">
             <input type = "button" class = "productmenu" value = "상품명">
             <input type = "button" class = "productmenu" value = "판매금액">
@@ -51,6 +52,7 @@
     </div>
 </div>
         <div id = "card">
+            <h4>상품구매 결제선택하기</h4>
             <div>
             <input type= "checkbox" class = "white" value = "카드">카드
             <input type= "checkbox" class = "white" value = "현금">현금
@@ -60,7 +62,7 @@
                 <option value = "">1000원</option>
                 <option value = "">2000원</option>
                 <option value = "">10000원</option>
-                <option value = "">기타</option>
+                <option value = "" id = "cash">기타</option>
                 <option value = "">가격에맞게</option>
             </select>
             <input type = "text" id = "help" placeholder ="직원에게 부탁할것">
