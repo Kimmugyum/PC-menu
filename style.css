@@ -46,7 +46,7 @@ main{
     display : flex;
 }
 
-.button {/*버튼 CSS*/
+.menubutton {/*버튼 CSS*/
     border : 1px solid black;
     background-color: #3e4648;
     color : yellow;
