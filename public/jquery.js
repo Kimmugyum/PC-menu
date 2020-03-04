@@ -1,4 +1,3 @@
-
 getdata()
 
 function getdata()
