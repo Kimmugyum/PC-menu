@@ -8,50 +8,50 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bfda034327.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-    <div id = "product">
-        <h1>상품주문</h1>
-    </div>
-    <div id = "food">
-        <h2 class = "yellow">menu</h2>
-        <input type = "text" placeholder = "메뉴를 입력하세요">
-        <input type = "button" value ="검색">
-    </div>
+        <div id = "product">
+            <h1>상품주문</h1>
+        </div>
+        <div id = "food">
+            <h2 class = "yellow">menu</h2>
+            <input type = "text" placeholder = "메뉴를 입력하세요">
+            <input type = "button" value ="검색">
+        </div>
     </header>
     <main>
     <!-- 배경 -->
-    <ul id = "menu">
-    </ul>
-    <div id = "picture">
-    </div>
+        <ul id = "menu">
+        </ul>
+        <div id = "picture">
+        </div>
     </main>
     <footer>
-    <div id = "orderlist">
-        <div id = "list"> <!-- 상품리스트 -->
-        <h3>상품구매목록</h3>
-            <input type ="button" id = "recentbutton" value = "주문내역">
-            <i class="far fa-plus-square fa-3x"></i>
-            <i class="far fa-minus-square fa-3x"></i>
+        <div id = "orderlist">
+            <div id = "list"> <!-- 상품리스트 -->
+                <h3>상품구매목록</h3>
+                <input type ="button" id = "recentbutton" value = "주문내역">
+                <i class="far fa-plus-square fa-3x"></i>
+                <i class="far fa-minus-square fa-3x"></i>
+            </div>
+            <div id = "choice">
+                <input type = "button" class = "productmenu" value = "상품명">
+                <input type = "button" class = "productmenu" value = "판매금액">
+                <input type = "button" class = "productmenu" value = "수량">
+            </div>
+            <div id = "moniter">
+            </div>
         </div>
-        <div id = "choice">
-            <input type = "button" class = "productmenu" value = "상품명">
-            <input type = "button" class = "productmenu" value = "판매금액">
-            <input type = "button" class = "productmenu" value = "수량">
-    </div>
-    <div id = "moniter">
-    </div>
-</div>
         <div id = "card">
             <h4>상품구매 결제선택하기</h4>
             <div>
-            <input type= "checkbox" class = "white" value = "카드">카드
-            <input type= "checkbox" class = "white" value = "현금">현금
-        </div>
+                <input type= "checkbox" class = "white" value = "카드">카드
+                <input type= "checkbox" class = "white" value = "현금">현금
+            </div>
             <select id = "money">
                 <option value = "">금액을선택하세요</option>
                 <option value = "">1000원</option>
@@ -63,8 +63,8 @@
             <input type = "text" id = "help" placeholder ="직원에게 부탁할것">
         </div>
         <div id = "bottom">
-        <input type = "text" id = "price" placeholder="0원">
-        <input type = "button" id = "order" value = "상품 주문하기">
+            <input type = "text" id = "price" placeholder="0원">
+            <input type = "button" id = "order" value = "상품 주문하기">
         </div>
         <!-- 시멘틱태그 -->
     </footer>
