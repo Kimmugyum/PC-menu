@@ -1,9 +1,9 @@
 getdata()
-
+gallery()
 function getdata()
 {
     $.ajax({
-        url: 'http://localhost:3000/menu',
+        url: 'http://localhost:3001/menu',
         type : 'GET',
         success:function(data){
             for(var i = 0; i < data.length; i++)
@@ -14,17 +14,38 @@ function getdata()
     })
 }
 
-$(function(data)
+function gallery()
+{
+    $.ajax({
+        url: 'http://localhost:3001/food',
+        type : 'GET',
+        success:function(data){
+            for(var i = 0; i < data.length; i++)
+            {
+                    menupicture(data[i])
+            }
+        }
+    })
+}
+
+function menu(data)
 {   
-    $("#menu").append(<li id="${data.id}">${data.name}</li>);
-})
+    $("#menu").append(`<li id="${data.id}">${data.name}</li>`); // <ul>밑에 jquery로 <li>자식생성
+}
 
 
-// function menu(data) javscript 작업한거
-// {
-//     var ul = document.getElementById("menu") //첫번째
-//     var li = document.createElement("li")
-//     li.setAttribute("id", data.id)
-//     var value = document.createTextNode(data.name)
-//     li.appendChild(value)
-//     ul.appendChild(li)
+function menupicture(data)
+{
+    $('#menu li').click(function()
+    {
+       var foodid = $(this).attr('id')
+       if(data.menu == foodid)
+        {
+            var a = $("#picture").html(`<img src = "MenuList%20Picture/${data.filename}" width = "350px" height = "250px">`)
+            $("#picture").append(`<img src = "MenuList%20Picture/${data.filename}" width = "350px" height = "250px">`)
+            $("#picture").append(`<img src = "MenuList%20Picture/${data.filename}" width = "350px" height = "250px">`)
+        }
+    })
+}
+
+// $("#picture").append(`<img src = "MenuList%20Picture/${data.filename}" width = "350px" height = "250px">`)
