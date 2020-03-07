@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 var mysql = require('mysql');
-const port = 3001
+const port = 3000
 
 var db = mysql.createConnection({
     host : 'localhost',
@@ -27,8 +27,9 @@ app.get('/menu', function(req, res){
     })
 })
 
-app.get('/food', function(req, res){
-    db.query('SELECT * FROM food', function(error, result)
+app.get('/food/:id', function(req, res){
+    var number = req.params.id
+    db.query(`SELECT * FROM food where menu = ?`,[number], function(error, result)
     {
         if(error)
         {
