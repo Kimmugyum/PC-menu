@@ -162,3 +162,24 @@ footer {
     border-radius: 5px;
     float : right;
 }
+
+.price {
+    border : 0.5px solid black; 
+    text-align : center; 
+    background-color : #808080; 
+    color : white; 
+    font-size : 20px; 
+    padding : 5px;
+}
+
+#all {
+    display : flex;
+    border : 1px solid black;
+}
+
+#count {
+    width : 320px;
+    border : none;
+    text-align : center;
+    font-size : 30px;
+}
