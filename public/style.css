@@ -172,12 +172,12 @@ footer {
     padding : 5px;
 }
 
-#all {
+.all {
     display : flex;
     border : 1px solid black;
 }
 
-#count {
+.count {
     width : 320px;
     border : none;
     text-align : center;
