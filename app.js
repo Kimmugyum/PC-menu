@@ -40,8 +40,9 @@ app.get('/food/:id', function(req, res){
     })
 })
 
-app.get('/food', function(req, res){
-    db.query(`SELECT * FROM food`,function(error, result)
+app.get('/food/:name', function(req, res){
+    var foodnames = req.params.name
+    db.query(`SELECT * FROM food WHERE NAME LIKE ?`,["%"+foodnames+"%"], function(error, result)
     {
         if(error)
         {
@@ -51,4 +52,5 @@ app.get('/food', function(req, res){
         res.json(result)
     })
 })
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

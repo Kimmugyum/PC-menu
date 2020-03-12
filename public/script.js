@@ -1,12 +1,14 @@
 getData()
 
 $("#search").click(function() {
-    search()
+
+    var name = $("#menuname").val()
+    search(name)
 })
 
-function search() {    
+function search(name) {   
     $.ajax({
-        url: 'food',
+        url: 'food/' + name,
         type : 'GET',
         success:function(data) {
             menuSearch(data)
@@ -19,8 +21,7 @@ function getData() {
         url: 'menu',
         type : 'GET',
         success:function(data) {
-            for(var i = 0; i < data.length; i++)
-            {
+            for(var i = 0; i < data.length; i++) {
                 menu(data[i])
             }
             $("#menu li").click(function() {
@@ -66,7 +67,6 @@ function menuPicture(data)
 function menuSearch(data)
 {
     $("#picture").html('')
-    var foodname = $("#menuname").val()
     for(var i = 0; i < data.length; i++) {
         if(foodname == data[i].name) {
             $("#picture").append(
