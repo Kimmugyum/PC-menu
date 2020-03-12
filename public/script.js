@@ -1,17 +1,16 @@
 getData()
 
 $("#search").click(function() {
-
-    var name = $("#menuname").val()
-    foodsearch(name)
+    var foodname = $("#menuname").val()
+    foodSearch(foodname)
 })
 
-function foodsearch(name) {   
+function foodSearch(foodname) {   
     $.ajax({
-        url: 'food/search/' + name,
+        url: 'food/search/' + foodname,
         type : 'GET',
         success:function(data) {
-            Search(data)
+            foodPicture(data)
         }
     })
 }
@@ -37,17 +36,16 @@ function gallery(number) {
         url: 'food/' + number,
         type : 'GET',
         success:function(data){
-                menuPicture(data)     
+                foodPicture(data)     
         }
     })
 }
 
-function menu(data) {   
-    $("#menu").append(`<li id="${data.id}">${data.name}</li>`); // <ul>밑에 jquery로 <li>자식생성
+function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
+    $("#menu").append(`<li id="${data.id}">${data.name}</li>`); 
 }
 
-function menuPicture(data)
-{
+function foodPicture(data) {
     $("#picture").html('')
     for(var i = 0; i < data.length; i++) {
         $("#picture").append(
@@ -59,23 +57,6 @@ function menuPicture(data)
                     <input type ="text" class = "count" value = "0개">
                     <i class="far fa-minus-square fa-3x"></i>
                 </div>
-        </div>`)
-    }
-}
-
-function Search(data)
-{
-    $("#picture").html('')
-    for(var i = 0; i < data.length; i++) {
-        $("#picture").append(
-        `<div>
-            <img src = "image/${data[i].filename}" width = "400px" height = "250px">
-            <div class = "price">${data[i].name} ${data[i].price}원</div>
-            <div class = "all">
-                <i class="far fa-plus-square fa-3x"></i>
-                <input type ="text" class = "count" value = "0개">
-                <i class="far fa-minus-square fa-3x"></i>
-            </div>
         </div>`)
     }
 }
