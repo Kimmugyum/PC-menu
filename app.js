@@ -40,7 +40,7 @@ app.get('/food/:id', function(req, res){
     })
 })
 
-app.get('/foodpicture/:name', function(req, res){
+app.get('/food/search/:name', function(req, res){
     var foodnames = req.params.name
     db.query(`SELECT * FROM food WHERE NAME LIKE ?`,["%"+foodnames+"%"], function(error, result)
     {

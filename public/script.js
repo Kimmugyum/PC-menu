@@ -3,15 +3,15 @@ getData()
 $("#search").click(function() {
 
     var name = $("#menuname").val()
-    search(name)
+    foodsearch(name)
 })
 
-function search(name) {   
+function foodsearch(name) {   
     $.ajax({
-        url: 'foodpicture/' + name,
+        url: 'food/search/' + name,
         type : 'GET',
         success:function(data) {
-            menuSearch(data)
+            Search(data)
         }
     })
 }
@@ -46,7 +46,6 @@ function menu(data) {
     $("#menu").append(`<li id="${data.id}">${data.name}</li>`); // <ul>밑에 jquery로 <li>자식생성
 }
 
-
 function menuPicture(data)
 {
     $("#picture").html('')
@@ -64,7 +63,7 @@ function menuPicture(data)
     }
 }
 
-function menuSearch(data)
+function Search(data)
 {
     $("#picture").html('')
     for(var i = 0; i < data.length; i++) {
