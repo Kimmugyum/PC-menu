@@ -134,7 +134,14 @@ footer {
     background-color: white;
     height : 22rem;
 }
-.white {
+
+#cardpayment {
+    background-color: white;
+    width : 2rem;
+    height : 2rem;
+}
+
+#moneypayment {
     background-color: white;
     width : 2rem;
     height : 2rem;
@@ -152,6 +159,13 @@ footer {
     flex-direction: column;
     height : 20rem;
     text-align: center;
+}
+
+#inputprice {
+    border:0;
+    width : 20rem;
+    height : 3rem;
+    background-color: transparent;
 }
 
 #order {

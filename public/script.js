@@ -5,6 +5,22 @@ $("#search").click(function() {
     foodSearch(foodname)
 })
 
+$("#money").change(function() { 
+    if(this.value == "기타") { 
+        $("#inputprice").css("background-color", "white")
+    }
+})
+
+$("#cardpayment").click(function(){
+    if($("input:checkbox[id=cardpayment]").is(":checked") == true) {
+        $("#money").css("background-color","transparent").css("border","0")
+        $("#money").val('')
+    }
+    else {
+        $("#money").css("background-color", "white")
+    }
+})
+
 function foodSearch(foodname) {   
     $.ajax({
         url: 'food/search/' + foodname,

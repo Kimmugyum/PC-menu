@@ -46,17 +46,18 @@
         <div id = "card">
             <h4>상품구매 결제선택하기</h4>
             <div>
-                <input type= "checkbox" class = "white" value = "카드">카드
-                <input type= "checkbox" class = "white" value = "현금">현금
+                <input type= "checkbox" id = "cardpayment" value = "카드">카드
+                <input type= "checkbox" id = "moneypayment" value = "현금">현금
             </div>
             <select id = "money">
-                <option value = "">금액을선택하세요</option>
-                <option value = "">1000원</option>
-                <option value = "">2000원</option>
-                <option value = "">10000원</option>
-                <option value = "" id = "cash">기타</option>
-                <option value = "">가격에맞게</option>
+                <option value = "금액을선택하세요">금액을선택하세요</option>
+                <option value = "1000원">1000원</option>
+                <option value = "2000원">2000원</option>
+                <option value = "10000원">10000원</option>
+                <option value = "기타" id = "cash">기타</option>
+                <option value = "가격에맞게">가격에맞게</option>
             </select>
+            <input type = "text" id = "inputprice">
             <input type = "text" id = "help" placeholder ="직원에게 부탁할것">
         </div>
         <div id = "bottom">
