@@ -15,15 +15,14 @@ $("#money").change(function() {
 })
 
 $("#cardpayment").click(function() {
-    if($("input:radio[id=cardpayment]").is(":checked") == true) {
-        $("#money").css("display","none")
-        $("#inputprice").css("display","none")
-    }
+    $("#money").css("display","none")
+    $("#inputprice").css("display","none")
 })
 
 $("#moneypayment").click(function() {
-if($("input:radio[id=moneypayment]").is(":checked") == true) {
         $("#money").css("display", "inline")
+        if($("#money option:selected").val() == "기타") {
+        $("#inputprice").css("display","inline")
     }
 })
 
