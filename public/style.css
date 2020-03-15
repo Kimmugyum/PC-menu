@@ -1,11 +1,11 @@
-html {
-    height : 100%;
-}
-
 * {
     margin : 0;
     padding : 0;
     box-sizing: border-box;
+}
+
+html {
+    height : 100%;
 }
 
 body {
@@ -22,6 +22,17 @@ h1 {
     color : white;
 }
 
+h3 {
+    font-size: 30px;
+    color : white;
+}
+
+h4 {
+    text-align: center;
+    font-size : 30px;
+}
+
+/* <header> CSS */
 #product { /*상품*/
     background-color: #292f2d;
     border : 3px solid black;
@@ -42,11 +53,12 @@ h1 {
     font-size : 30px;
 }
 
+/*<main> CSS */
 main{
     display : flex;
 }
 
-li {/*버튼 CSS*/
+li {/*음식이름버튼 CSS*/
     border : 1px solid black;
     background-color: #3e4648;
     color : yellow;
@@ -56,23 +68,23 @@ li {/*버튼 CSS*/
     text-align: center;
 }
 
+#picture {
+    display : flex;
+    flex : 3;
+    background-color: white;
+}
+
+/* <footer> CSS*/
 footer {
     background-color: #3e4648;
-}
-
-h3 {
-    font-size: 30px;
-    color : white;
-}
-
-h4 {
-    text-align: center;
-    font-size : 30px;
+    display : flex;
+    height : 400px;
 }
 
 #orderlist {
     display : flex;
     flex-direction: column;
+    flex : 2;
 }
 
 #list {
@@ -86,38 +98,41 @@ h4 {
     width : 13rem;
 }
 
-footer {
-    display : flex; 
-}
-
 #choice {
     display: flex;
     flex : 2;
 }
 
-#picture {
-    display : flex;
-    flex : 3;
-    background-color: white;
-}
-
-
 .productmenu{
     background-color : #5a5d6c;
     color : white;
     width : 13rem;
+    height : 3rem;
 }
 
-#addmenu {
-    background-color : white;
+#moniter {
+    background-color: white;
+    height : 22rem;
 }
 
 #card {
     display : flex;
     flex-direction: column;
-    flex : 1;
+    flex : 2;
     background-color : gray;
     border : 2px solid black;
+}
+
+#cardpayment {
+    background-color: white;
+    width : 2rem;
+    height : 1rem;
+}
+
+#moneypayment {
+    background-color: white;
+    width : 2rem;
+    height : 1rem;
 }
 
 #money {
@@ -126,26 +141,10 @@ footer {
 }
 
 #bottom {
-    flex : 2px;
+    flex : 1px;
     border : 2px solid black;
 }
 
-#moniter {
-    background-color: white;
-    height : 22rem;
-}
-
-#cardpayment {
-    background-color: white;
-    width : 2rem;
-    height : 2rem;
-}
-
-#moneypayment {
-    background-color: white;
-    width : 2rem;
-    height : 2rem;
-}
 #price {
     background-color: floralwhite;
     color : white;
@@ -154,27 +153,18 @@ footer {
     border-radius: 5px;
 }
 
+#inputprice {
+    border:0;
+    width : 20rem;
+    height : 3rem;
+    display : none;
+}
+
 #help{
     display : flex;
     flex-direction: column;
     height : 20rem;
     text-align: center;
-}
-
-#inputprice {
-    border:0;
-    width : 20rem;
-    height : 3rem;
-    background-color: transparent;
-}
-
-#order {
-    background-color: #ed4a5d;
-    color : white;
-    font-size : 30px;
-    height : 10rem;
-    border-radius: 5px;
-    float : right;
 }
 
 .price {
@@ -186,14 +176,11 @@ footer {
     padding : 5px;
 }
 
-.all {
-    display : flex;
-    border : 1px solid black;
-}
-
-.count {
-    width : 320px;
-    border : none;
-    text-align : center;
+#order {
+    background-color: #ed4a5d;
+    color : white;
     font-size : 30px;
+    height : 10rem;
+    border-radius: 5px;
+    float : right;
 }

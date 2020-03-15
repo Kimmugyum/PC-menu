@@ -1,23 +1,29 @@
 getData()
 
-$("#search").click(function() {
+$("#search").click(function() { // 음식을 검색을 통해 찾기기능
     var foodname = $("#menuname").val()
     foodSearch(foodname)
 })
 
 $("#money").change(function() { 
     if(this.value == "기타") { 
-        $("#inputprice").css("background-color", "white")
+        $("#inputprice").css("display", "inline")
+    }
+    else {
+        $("#inputprice").css("display","none")
     }
 })
 
-$("#cardpayment").click(function(){
-    if($("input:checkbox[id=cardpayment]").is(":checked") == true) {
-        $("#money").css("background-color","transparent").css("border","0")
-        $("#money").val('')
+$("#cardpayment").click(function() {
+    if($("input:radio[id=cardpayment]").is(":checked") == true) {
+        $("#money").css("display","none")
+        $("#inputprice").css("display","none")
     }
-    else {
-        $("#money").css("background-color", "white")
+})
+
+$("#moneypayment").click(function() {
+if($("input:radio[id=moneypayment]").is(":checked") == true) {
+        $("#money").css("display", "inline")
     }
 })
 
