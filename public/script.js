@@ -57,10 +57,21 @@ function gallery(number) {
         url: 'food/' + number,
         type : 'GET',
         success:function(data){
-                foodPicture(data)     
+                foodPicture(data)
+                console.log(data)
         }
     })
 }
+
+// function list(id) {
+//     $.ajax({
+//         url: 'food/' + id,
+//         type : 'GET',
+//         success:function(data){
+//                 productList(data) 
+//         }
+//     })
+// }
 
 function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
     $("#menu").append(`<li id="${data.id}">${data.name}</li>`); 
@@ -68,16 +79,34 @@ function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
 
 function foodPicture(data) {
     $("#picture").html('')
+    var number = 0;
     for(var i = 0; i < data.length; i++) {
         $("#picture").append(
         `<div>
             <img src = "image/${data[i].filename}" width = "400px" height = "250px">
-            <div class = "price">${data[i].name} ${data[i].price}원</div>
+            <div class = "price"><p>${data[i].name} ${data[i].price}원</p></div>
                 <div class = "all">
-                    <i class="far fa-plus-square fa-3x"></i>
-                    <input type ="text" class = "count" value = "0개">
-                    <i class="far fa-minus-square fa-3x"></i>
+                    <input type = "button" class = "plus" value = "+">
+                    <input type ="text" class = "count" value = ${number}>
+                    <input type = "button" class = "minus" value = "-">
                 </div>
         </div>`)
-    }
+    }// <i class="far fa-plus-square fa-3x a"></i><i class="far fa-minus-square fa-3x b"></i>
+    $('.plus').click(function(){
+        $(this).next().val(number += 1)
+        console.log(id)
+        // list(id)
+    })
+    $(".minus").click(function(){
+        $(this).prev().val(number -= 1)
+    })
 }
+
+// function productList(data)
+// {
+//     $("#moniter").append(`<table border = "2">
+//                 <thead>
+//                     <tr><th>hi</th></tr>
+//                 </thead>
+//                 </table`)
+// }

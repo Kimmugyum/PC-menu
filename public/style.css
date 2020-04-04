@@ -184,3 +184,26 @@ footer {
     border-radius: 5px;
     float : right;
 }
+
+.count {	
+    width : 200px;	
+    border : none;	
+    text-align : center;	
+    font-size : 30px;
+}
+.all {
+    display : flex;
+    border : 1px solid black;
+}
+
+.plus {
+    width : 100px;
+    font-size : 20px;
+    height : 3em;
+}
+
+.minus {
+    width : 100px;
+    font-size : 20px;
+    height : 3em;
+}
