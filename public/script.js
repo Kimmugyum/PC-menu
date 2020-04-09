@@ -58,20 +58,36 @@ function gallery(number) {
         type : 'GET',
         success:function(data){
                 foodPicture(data)
-                console.log(data)
         }
     })
 }
 
-// function list(id) {
-//     $.ajax({
-//         url: 'food/' + id,
-//         type : 'GET',
-//         success:function(data){
-//                 productList(data) 
-//         }
-//     })
-// }
+function list() {
+    $.ajax({
+        url: 'food',
+        type : 'GET',
+        success:function(data){
+            for(var i = 0; i < data.length; i++) {
+                buyList(data[i])
+            }
+        }
+    })
+}
+
+function buyList(data)
+{
+    if(data.id == 1){
+    $("#moniter").append(`<table border = "2">
+                <thead>
+                    <tr>
+                        <th class = "menusize">${data.name}</th>
+                        <th class = "menusize">${data.price}</th>
+                        <th class = "menusize">${number}</th>
+                    </tr>
+                </thead>
+                </table`)
+    }
+}
 
 function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
     $("#menu").append(`<li id="${data.id}">${data.name}</li>`); 
@@ -79,7 +95,7 @@ function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
 
 function foodPicture(data) {
     $("#picture").html('')
-    var number = 0;
+    number = 0;
     for(var i = 0; i < data.length; i++) {
         $("#picture").append(
         `<div>
@@ -94,19 +110,9 @@ function foodPicture(data) {
     }// <i class="far fa-plus-square fa-3x a"></i><i class="far fa-minus-square fa-3x b"></i>
     $('.plus').click(function(){
         $(this).next().val(number += 1)
-        console.log(id)
-        // list(id)
+        list()
     })
     $(".minus").click(function(){
         $(this).prev().val(number -= 1)
     })
 }
-
-// function productList(data)
-// {
-//     $("#moniter").append(`<table border = "2">
-//                 <thead>
-//                     <tr><th>hi</th></tr>
-//                 </thead>
-//                 </table`)
-// }
