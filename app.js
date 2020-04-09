@@ -47,17 +47,5 @@ app.get('/food/search/:name', function(req, res){
     })
 })
 
-app.get('/food', function(req, res){
-    db.query(`SELECT * FROM food`, function(error, result)
-    {
-        if(error)
-        {
-            console.log(error)
-        }
-        console.log(result)
-        res.json(result)
-    })
-})
-
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

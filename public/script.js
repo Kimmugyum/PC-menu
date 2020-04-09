@@ -62,57 +62,46 @@ function gallery(number) {
     })
 }
 
-function list() {
-    $.ajax({
-        url: 'food',
-        type : 'GET',
-        success:function(data){
-            for(var i = 0; i < data.length; i++) {
-                buyList(data[i])
-            }
-        }
-    })
-}
-
-function buyList(data)
-{
-    if(data.id == 1){
-    $("#moniter").append(`<table border = "2">
-                <thead>
-                    <tr>
-                        <th class = "menusize">${data.name}</th>
-                        <th class = "menusize">${data.price}</th>
-                        <th class = "menusize">${number}</th>
-                    </tr>
-                </thead>
-                </table`)
-    }
-}
-
 function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
     $("#menu").append(`<li id="${data.id}">${data.name}</li>`); 
 }
 
 function foodPicture(data) {
     $("#picture").html('')
-    number = 0;
     for(var i = 0; i < data.length; i++) {
         $("#picture").append(
         `<div>
-            <img src = "image/${data[i].filename}" width = "400px" height = "250px">
+            <img src = "image/${data[i].filename}"} width = "400px" height = "250px">
             <div class = "price"><p>${data[i].name} ${data[i].price}원</p></div>
-                <div class = "all">
+                <div class = "all" id = "${data[i].id}">
                     <input type = "button" class = "plus" value = "+">
-                    <input type ="text" class = "count" value = ${number}>
+                    <input type ="text" class = "count" value = 0>
                     <input type = "button" class = "minus" value = "-">
                 </div>
         </div>`)
     }// <i class="far fa-plus-square fa-3x a"></i><i class="far fa-minus-square fa-3x b"></i>
     $('.plus').click(function(){
-        $(this).next().val(number += 1)
-        list()
-    })
+        var number = $(this).next().val()
+        var changeNumber = eval(number)
+        $(this).next().val(changeNumber += 1)
+        var foodid = $(this.parentNode).attr("id")
+        $("#moniter").append(`<table border = "2">
+                <thead>
+                    <tr>
+                        <th class = "menusize">${data[foodid-1].name}</th>
+                        <th class = "menusize">${data[foodid-1].price}</th>
+                        <th class = "menusize">${changeNumber}</th>
+                    </tr>
+                </thead>
+                </table`)
+})
+
     $(".minus").click(function(){
-        $(this).prev().val(number -= 1)
+        var number = $(this).prev().val()
+        if(number > 0){
+            var changeNumber = eval(number)
+            $(this).prev().val(changeNumber -= 1)
+        }
     })
+
 }
