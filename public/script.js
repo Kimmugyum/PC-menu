@@ -79,29 +79,26 @@ function foodPicture(data) {
                     <input type = "button" class = "minus" value = "-">
                 </div>
         </div>`)
-    }// <i class="far fa-plus-square fa-3x a"></i><i class="far fa-minus-square fa-3x b"></i>
+    }
     $('.plus').click(function(){
         var number = $(this).next().val()
-        var changeNumber = eval(number)
+        var changeNumber = parseInt(number)
         $(this).next().val(changeNumber += 1)
-        var foodid = $(this.parentNode).attr("id")
-        $("#moniter").append(`<table border = "2">
-                <thead>
+        var foodId = $(this.parentNode).attr("id")
+        $("#tbodyline").append(`
                     <tr>
-                        <th class = "menusize">${data[foodid-1].name}</th>
-                        <th class = "menusize">${data[foodid-1].price}</th>
+                        <th class = "menusize">${data[foodId-1].name}</th>
+                        <th class = "menusize">${data[foodId-1].price}</th>
                         <th class = "menusize">${changeNumber}</th>
                     </tr>
-                </thead>
-                </table`)
+        `)
 })
-
     $(".minus").click(function(){
         var number = $(this).prev().val()
+        console.log(number)
         if(number > 0){
-            var changeNumber = eval(number)
+            var changeNumber = parseInt(number)
             $(this).prev().val(changeNumber -= 1)
         }
     })
-
 }
