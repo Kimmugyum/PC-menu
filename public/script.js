@@ -31,7 +31,9 @@ function foodSearch(foodname) {
         url: 'food/search/' + foodname,
         type : 'GET',
         success:function(data) {
-            foodPicture(data)
+            for(var i =0; i < data.length; i++){
+            foodPicture(data[i])
+            }
         }
     })
 }
@@ -47,6 +49,7 @@ function getData() {
             $("#menu li").click(function() {
                 var number = $(this).attr("id");
                 gallery(number)
+                $("#picture").html('')
             })
         }
     })
@@ -57,7 +60,9 @@ function gallery(number) {
         url: 'food/' + number,
         type : 'GET',
         success:function(data){
-                foodPicture(data)
+            for(var i = 0; i < data.length; i++){
+                foodPicture(data[i])
+            }
         }
     })
 }
@@ -67,32 +72,29 @@ function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
 }
 
 function foodPicture(data) {
-    $("#picture").html('')
-    for(var i = 0; i < data.length; i++) {
+    console.log(data)
         $("#picture").append(
         `<div>
-            <img src = "image/${data[i].filename}"} width = "400px" height = "250px">
-            <div class = "price"><p>${data[i].name} ${data[i].price}원</p></div>
-                <div class = "all" id = "${data[i].id}">
+            <img src = "image/${data.filename}"} width = "400px" height = "250px">
+            <div class = "price"><p>${data.name} ${data.price}원</p></div>
+                <div class = "all" id = "${data.id}">
                     <input type = "button" class = "plus" value = "+">
                     <input type ="text" class = "count" value = 0>
                     <input type = "button" class = "minus" value = "-">
                 </div>
         </div>`)
-    }
     $('.plus').click(function(){
         var number = $(this).next().val()
         var changeNumber = parseInt(number)
         $(this).next().val(changeNumber += 1)
-        var foodId = $(this.parentNode).attr("id")
-        $("#tbodyline").append(`
+        $("#moniter").append(`
                     <tr>
-                        <th class = "menusize">${data[foodId-1].name}</th>
-                        <th class = "menusize">${data[foodId-1].price}</th>
-                        <th class = "menusize">${changeNumber}</th>
-                    </tr>
+                        <td class = "menusize">${data.name}</td>
+                        <td class = "menusize">${data.price}</td>
+                        <td class = "menusize">${changeNumber}</td>
+                    </tr>    
         `)
-})
+    })
     $(".minus").click(function(){
         var number = $(this).prev().val()
         console.log(number)

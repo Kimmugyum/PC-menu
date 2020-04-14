@@ -85,6 +85,7 @@ footer {
     display : flex;
     flex-direction: column;
     flex : 2;
+    background-color: white;
 }
 
 #list {
@@ -98,21 +99,11 @@ footer {
     width : 13rem;
 }
 
-#choice {
-    display: flex;
-    flex : 2;
-}
-
 .productmenu{
     background-color : #5a5d6c;
     color : white;
     width : 13rem;
     height : 3rem;
-}
-
-#moniter {
-    background-color: white;
-    height : 22rem;
 }
 
 #card {
@@ -211,6 +202,7 @@ footer {
 .menusize {
     width : 208px;
     border : 1px black solid;
+    text-align : center;
 }
 
 #tableline {
