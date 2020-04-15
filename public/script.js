@@ -55,13 +55,16 @@ function getData() {
     })
 }
 
+var MenuList = {};
+
 function gallery(number) {
     $.ajax({
         url: 'food/' + number,
         type : 'GET',
         success:function(data){
+            MenuList = data
             for(var i = 0; i < data.length; i++){
-                foodPicture(data[i])
+                foodPicture(i)
             }
         }
     })
@@ -71,36 +74,39 @@ function menu(data) {   // <ul>밑에 jquery로 <li>자식생성 : 메뉴이름
     $("#menu").append(`<li id="${data.id}">${data.name}</li>`); 
 }
 
-function foodPicture(data) {
-    console.log(data)
+
+function foodPicture(value) {
+    var data = MenuList[value]
         $("#picture").append(
-        `<div>
+        `<div id=${value}>
             <img src = "image/${data.filename}"} width = "400px" height = "250px">
             <div class = "price"><p>${data.name} ${data.price}원</p></div>
-                <div class = "all" id = "${data.id}">
+                <div class = "all">
                     <input type = "button" class = "plus" value = "+">
                     <input type ="text" class = "count" value = 0>
                     <input type = "button" class = "minus" value = "-">
                 </div>
         </div>`)
-    $('.plus').click(function(){
-        var number = $(this).next().val()
-        var changeNumber = parseInt(number)
-        $(this).next().val(changeNumber += 1)
-        $("#moniter").append(`
-                    <tr>
-                        <td class = "menusize">${data.name}</td>
-                        <td class = "menusize">${data.price}</td>
-                        <td class = "menusize">${changeNumber}</td>
-                    </tr>    
-        `)
-    })
-    $(".minus").click(function(){
-        var number = $(this).prev().val()
-        console.log(number)
-        if(number > 0){
-            var changeNumber = parseInt(number)
-            $(this).prev().val(changeNumber -= 1)
-        }
-    })
 }
+
+$(document).on('click','.plus', function(){
+    var productId = $(this).parent().parent().attr("id")
+    var number = $(this).next().val()
+    var changeNumber = parseInt(number)
+    $(this).next().val(changeNumber += 1)
+    $("#moniter").append(`
+                <tr id = ${productId}>
+                    <td class = "menusize">${MenuList[productId].name}</td>
+                    <td class = "menusize">${MenuList[productId].price}</td>1
+                    <td class = "menusize">${changeNumber}</td>
+                </tr>
+        `)
+})
+
+$(document).on('click','.minus', function(){
+    var number = $(this).prev().val()
+    if(number > 0){
+        var changeNumber = parseInt(number)
+        $(this).prev().val(changeNumber -= 1)
+    }
+})
