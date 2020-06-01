@@ -94,13 +94,19 @@ $(document).on('click','.plus', function(){
     var number = $(this).next().val()
     var changeNumber = parseInt(number)
     $(this).next().val(changeNumber += 1)
+    console.log(productId)
+    if(productId != $("#moniter").children().attr("id")){
     $("#moniter").append(`
                 <tr id = ${productId}>
                     <td class = "menusize">${MenuList[productId].name}</td>
                     <td class = "menusize">${MenuList[productId].price}</td>1
-                    <td class = "menusize">${changeNumber}</td>
+                    <td class = "menusize" id = "a">${changeNumber}</td>
                 </tr>
         `)
+    }
+    var a = $(".menusize").index(this)
+    console.log(a)
+
 })
 
 $(document).on('click','.minus', function(){
