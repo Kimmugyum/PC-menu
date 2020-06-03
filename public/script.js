@@ -108,8 +108,8 @@ $(document).on('click','.plus', function(){
     }
     else{
     var tdNumber = $("#a").text()
-    var b = parseInt(tdNumber)
-    $("#a").text(b+1)
+    var change = parseInt(tdNumber)
+    $("#a").text(change+1)
     }
 })
 
