@@ -95,6 +95,8 @@ $(document).on('click','.plus', function(){
     var changeNumber = parseInt(number)
     $(this).next().val(changeNumber += 1)
     console.log(productId)
+    var c = $("#moniter").children().attr("id")
+    console.log(c)
     if(productId != $("#moniter").children().attr("id")){
     $("#moniter").append(`
                 <tr id = ${productId}>
@@ -104,9 +106,11 @@ $(document).on('click','.plus', function(){
                 </tr>
         `)
     }
-    var a = $(".menusize").index(this)
-    console.log(a)
-
+    else{
+    var tdNumber = $("#a").text()
+    var b = parseInt(tdNumber)
+    $("#a").text(b+1)
+    }
 })
 
 $(document).on('click','.minus', function(){
@@ -115,4 +119,4 @@ $(document).on('click','.minus', function(){
         var changeNumber = parseInt(number)
         $(this).prev().val(changeNumber -= 1)
     }
-})
+})a
