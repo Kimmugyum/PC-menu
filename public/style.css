@@ -182,10 +182,6 @@ footer {
     text-align : center;	
     font-size : 30px;
 }
-.all {
-    display : flex;
-    border : 1px solid black;
-}
 
 .plus {
     width : 100px;
